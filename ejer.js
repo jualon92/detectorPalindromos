@@ -12,7 +12,7 @@ function darVuelta(pfrase){
 
 console.log(esPalindromo("hola"));
 console.log(esPalindromo("ana"));
-
+console.log(esPalindromo("ANA"));
 //ignorar emojis
 
 
