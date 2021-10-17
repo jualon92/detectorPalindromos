@@ -1,6 +1,6 @@
  
 function esPalindromo(pfrase){
-    let palNormalizada = pfrase.toLowerCase().trim(); //mayus no afecten
+    let palNormalizada = pfrase.toLowerCase(); //mayus no afecten
     return darVuelta(palNormalizada) === palNormalizada;
 }
 
