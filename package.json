@@ -1,0 +1,24 @@
+{
+  "name": "jlondra-palindromo",
+  "version": "0.1.0",
+  "description": "Detector Palindromos",
+  "main": "(index.js)",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jualon92/detectorPalindromos.git"
+  },
+  "keywords": [
+    "palindromo",
+    "javascript",
+    "learn-enough"
+  ],
+  "author": "Juan Ignacio Londra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jualon92/detectorPalindromos/issues"
+  },
+  "homepage": "https://github.com/jualon92/detectorPalindromos#readme"
+}
