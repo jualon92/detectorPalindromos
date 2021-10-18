@@ -1,8 +1,10 @@
- 
+
+module.exports = Frase;
+
 function darVuelta(pfrase){
 //se utiliza Array.from para evitar problemas con emojis
 //  return  Array.from(pfrase).reverse().join("");
-  return pfrase.reverse(); //pfrase es String, se agrego en prototype reverse(), syntactic sugar
+  return pfrase.reverse().join(""); //pfrase es String, se agrego en prototype.reverse(), syntactic sugar
 }
 
 function esVacio(pfrase){
@@ -22,8 +24,10 @@ Array.prototype.last = function(){ //devuelve ultimo ele de array
 }
 
 
+//////////////////////
 
-function Frase(contenido){ //funcion constructor, clase
+
+function Frase(contenido){ //funcion constructor, clase.
   this.contenido = contenido; // atributo
 
   //devuelve palabra a utilizar, se separa logica procesamiento y devolver frase
@@ -33,11 +37,12 @@ function Frase(contenido){ //funcion constructor, clase
   }
 
   //procesa palabra, puede crecer
-  this.procesar = function procesar(frase){
-    return frase.toLowerCase();
+  this.procesar = function procesar(pfrase){
+    return pfrase.toLowerCase();
   }
 
-  //bool palindromo
+
+  //sujeto se encarga de afirmar si es o no palindromo.
   this.esPalindromo = function esPalindromo(){ //metodo,mensaje
     return darVuelta(this.getPal()) === this.getPal();
   }
@@ -67,8 +72,6 @@ String.prototype.reverse = function(){
   return Array.from(this).reverse() //this, own object.
 }
 
-let maria = "maria"
-console.log(maria.reverse());
 
 
 
