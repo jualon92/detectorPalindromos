@@ -1,19 +1,29 @@
 
 module.exports = Frase;
+let pal = prompt("ingresar palindromo de prueba");
+let fraseIngresada = new Frase(pal);
+
+if (fraseIngresada.esPalindromo()) {
+  alert(fraseIngresada.contenido + " es un palindromo!");
+} else {
+  alert(fraseIngresada.contenido + " no es un palindromo :(")
+}
+
+
+String.prototype.reverse = function(){ 
+  return Array.from(this).reverse(); //this, own object.
+}
 
 function darVuelta(pfrase){
 //se utiliza Array.from para evitar problemas con emojis
-//  return  Array.from(pfrase).reverse().join("");
-  return pfrase.reverse().join(""); //pfrase es String, se agrego en prototype.reverse(), syntactic sugar
+  return  Array.from(pfrase).reverse().join("");
+ // return pfrase.reverse().join(""); //pfrase es String, se agrego en prototype.reverse(), syntactic sugar
 }
 
 function esVacio(pfrase){
   return pfrase.blank();
 }
 
-String.prototype.reverse = function(){ 
-  return Array.from(this).reverse(); //this, own object.
-}
 
 String.prototype.blank = function(){ //devuelve true si frase es whitespaces
   return !this.trim(); // si trim() devuelve "" es verdadero
@@ -33,12 +43,20 @@ function Frase(contenido){ //funcion constructor, clase.
   //devuelve palabra a utilizar, se separa logica procesamiento y devolver frase
   this.getPal = function getPal(){
     //return this.contenido.toLowerCase() //procesa y retorna, hace dos cosas a la vez :/
-    return this.procesar(this.contenido);
+  //  return this.procesar(this.contenido); //para que parametro? utilizar this
+      return this.procesar();
   }
 
+  this.letters = function letters() {
+    arrTarget = Array.from(this.contenido);
+    return arrTarget.filter( letra => letra.match(/[a-zA-Z]/)).join(""); //"hola."=>["h",o","l","a"]
+  
+  }
+
+
   //procesa palabra, puede crecer
-  this.procesar = function procesar(pfrase){
-    return pfrase.toLowerCase();
+  this.procesar = function procesar(){
+    return this.contenido.toLowerCase();
   }
 
 

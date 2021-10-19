@@ -1,5 +1,6 @@
 let assert = require("assert");
-let Frase = require("../index.js");
+let Frase = require("../main.js");
+//let Frase = require("jualon92-palindromo") validacion de npm por mail todavia no me anda :( 
 
 describe("Frase", function() {
     describe("#esPalindromo", function() {
@@ -19,15 +20,9 @@ describe("Frase", function() {
             assert(palMayus.esPalindromo());
         });
 
-        
-        it("deberia devolver True para palindromo con puntos o tildes", function(){
-            let palComp = new Frase(".AnA.");
+        it("deberia devolver True con frases con puntos y comas", function(){
+            let palComp = new Frase("ana, ana.");
             assert(palComp.esPalindromo());
-        });
-        
-        it("deberia devolver FAlse para palindromo con punto pero no igual", function(){
-            let palComp = new Frase("AnA.");
-            assert.notEqual(palComp.esPalindromo());
         });
         
     });
