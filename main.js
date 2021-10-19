@@ -1,14 +1,28 @@
 
 module.exports = Frase;
-let pal = prompt("ingresar palindromo de prueba");
-let fraseIngresada = new Frase(pal);
+let btnPalindromos = document.querySelector("#detectorPalindromos"); //getElementById tambien podria ser
 
-if (fraseIngresada.esPalindromo()) {
-  alert(fraseIngresada.contenido + " es un palindromo!");
-} else {
-  alert(fraseIngresada.contenido + " no es un palindromo :(")
+document.addEventListener("DOMContentLoaded", function(){ // cuando termina de cargar dom, ejecuta func interna
+  let tester = document.querySelector("#formPalindromos");
+//let tester = document.querySelector("#btnPalindromos");
+    tester.addEventListener("submit", function(event){ //puede crecer
+    detectorPalindromos(event); 
+  });
+});
+
+function detectorPalindromos(event){
+  event.preventDefault();
+ // let pal = prompt("ingresar palindromo de prueba");
+  let fraseIngresada = new Frase(event.target.frase1.value);
+  let fraseResultado = document.querySelector("#resultadoPalindromo");
+  
+
+  if (fraseIngresada.esPalindromo()) {
+    fraseResultado.innerHTML = fraseIngresada.contenido + " es un palindromo!";
+  } else {
+    fraseResultado.innerHTML = fraseIngresada.contenido + " no es un palindromo :("
+  }
 }
-
 
 String.prototype.reverse = function(){ 
   return Array.from(this).reverse(); //this, own object.

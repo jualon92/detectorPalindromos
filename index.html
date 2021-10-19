@@ -1,19 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Palintector</title>
     <script>
-    //    alert("hola mundo");
+        dialog("Un palindromo es una palabra o frase que se lee igual en un sentido o en otro");
     </script>
-    
-   <!--  <script src="main.js"></script>  no funciona porque browsers no soportan require-->
+    <link rel="stylesheet" href="css/style.css">
+    <!--  <script src="main.js"></script>  no funciona porque browsers no soportan require-->
     <script src="bundle.js"></script> <!-- watchify-->
 </head>
+
 <body>
-    <h1>Hola mundo</h1>
-    <p>esta pagina incluye una alerta mediante js</p>
+    <h1>Detector palindromos</h1>
+    <!--  <p>esta pagina incluye una alerta mediante js</p> -->
+    <form id="formPalindromos">
+        <textarea name="frase1" cols="30" rows="10"></textarea>
+        <button type="submit" id="btnPal">consultar Oraculo de los Palindromos</button>
+    </form>
+
+
+    <h2>Resultado: </h2>
+    <p id="resultadoPalindromo"></p>
+
 </body>
+
 </html>
